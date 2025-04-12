@@ -1,7 +1,24 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Feagin_Asg8_Defaults.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultCity" Type="System.String" Scope="User">
+      <Value Profile="(Default)">The City</Value>
+    </Setting>
+    <Setting Name="DefaultState" Type="System.String" Scope="User">
+      <Value Profile="(Default)">The State</Value>
+    </Setting>
+    <Setting Name="DefaultZip" Type="System.String" Scope="User">
+      <Value Profile="(Default)">The Zip</Value>
+    </Setting>
+    <Setting Name="DefaultAPIKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">The API Key</Value>
+    </Setting>
+    <Setting Name="DefaultFirstName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">First Name</Value>
+    </Setting>
+    <Setting Name="DefaultLastName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Last Name</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

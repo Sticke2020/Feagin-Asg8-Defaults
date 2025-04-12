@@ -133,6 +133,7 @@
             this.buttonSave.TabIndex = 8;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonCancel
             // 
@@ -152,6 +153,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDefaults";
             this.Text = "FormDefaults";
+            this.Load += new System.EventHandler(this.FormDefaults_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
