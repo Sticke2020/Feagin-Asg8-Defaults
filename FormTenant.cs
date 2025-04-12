@@ -35,7 +35,8 @@ namespace Feagin_Asg8_Defaults
 
         private void FormTenant_Load(object sender, EventArgs e)
         {
-           loadTenantData();
+            loadTenantData();
+            labelError.Text = "";
         }
 
         private void loadTenantData()
@@ -73,9 +74,22 @@ namespace Feagin_Asg8_Defaults
             tenant.Phone = textBoxPhone.Text;
             tenant.DateUpdated = DateTime.Now;
 
-            this.DialogResult = DialogResult.OK;
+            if (tenant.FirstName == "" || tenant.LastName == "" )
+            {
+                labelError.Text = "You must enter a First and Last name.";
+            }
+            if (tenant.City == "" || tenant.State == "" || tenant.Zip == "")
+            {
+                labelError.Text = "You must enter a City, State, and Zip.";
+            }
+            if (tenant.FirstName != "" && tenant.LastName != "" && tenant.City != ""
+                && tenant.State != "" && tenant.Zip != "")
+            {
+                this.DialogResult = DialogResult.OK;
 
-            this.Close();
+                this.Close();
+            }
+
         }
     }
 }

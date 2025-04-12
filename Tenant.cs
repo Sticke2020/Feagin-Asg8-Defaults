@@ -24,7 +24,7 @@ namespace Feagin_Asg8_Defaults
         public override string ToString()
         {
             // The $ is for interpolation
-            return $" {ID} - {FirstName} {LastName} {City} ";
+            return $"ID: {ID} {FirstName} {LastName} {City}, {Zip} ";
 
             // Can also be written
             // return " ID: " + ID.ToString() + " " + FirstName etc

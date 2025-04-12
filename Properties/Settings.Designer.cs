@@ -70,29 +70,5 @@ namespace Feagin_Asg8_Defaults.Properties {
                 this["DefaultAPIKey"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("First Name")]
-        public string DefaultFirstName {
-            get {
-                return ((string)(this["DefaultFirstName"]));
-            }
-            set {
-                this["DefaultFirstName"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Last Name")]
-        public string DefaultLastName {
-            get {
-                return ((string)(this["DefaultLastName"]));
-            }
-            set {
-                this["DefaultLastName"] = value;
-            }
-        }
     }
 }

@@ -46,8 +46,6 @@ namespace Feagin_Asg8_Defaults
 
             // Defaults for new Tenant object
             tenant.ID = 0;
-            tenant.FirstName = Properties.Settings.Default.DefaultFirstName;
-            tenant.LastName = Properties.Settings.Default.DefaultLastName;
             tenant.City = Properties.Settings.Default.DefaultCity;
             tenant.Zip = Properties.Settings.Default.DefaultZip;
             tenant.State = Properties.Settings.Default.DefaultState;

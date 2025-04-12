@@ -51,11 +51,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.labelError = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.labelError);
             this.groupBox1.Controls.Add(this.textBoxPhone);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.textBoxEmail);
@@ -218,7 +220,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(42, 476);
+            this.buttonSave.Location = new System.Drawing.Point(42, 496);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(134, 37);
             this.buttonSave.TabIndex = 16;
@@ -228,7 +230,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(197, 476);
+            this.buttonCancel.Location = new System.Drawing.Point(197, 496);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(134, 37);
             this.buttonCancel.TabIndex = 17;
@@ -267,6 +269,16 @@
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 18;
             this.label10.Text = "Email:";
+            // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(39, 463);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(0, 16);
+            this.labelError.TabIndex = 22;
             // 
             // FormTenant
             // 
@@ -308,5 +320,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelError;
     }
 }
