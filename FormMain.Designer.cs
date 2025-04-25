@@ -1,4 +1,4 @@
-﻿namespace Feagin_Asg8_Defaults
+﻿namespace Feagin_Asg9_SLR
 {
     partial class FormMain
     {
@@ -81,11 +81,14 @@
             // 
             // listBoxTenant
             // 
+            this.listBoxTenant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxTenant.FormattingEnabled = true;
+            this.listBoxTenant.ItemHeight = 16;
             this.listBoxTenant.Location = new System.Drawing.Point(172, 36);
             this.listBoxTenant.Name = "listBoxTenant";
-            this.listBoxTenant.Size = new System.Drawing.Size(371, 277);
+            this.listBoxTenant.Size = new System.Drawing.Size(371, 276);
             this.listBoxTenant.TabIndex = 3;
+            this.listBoxTenant.DoubleClick += new System.EventHandler(this.listBoxTenant_DoubleClick);
             // 
             // FormMain
             // 
@@ -94,7 +97,7 @@
             this.ClientSize = new System.Drawing.Size(602, 390);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormMain";
-            this.Text = "Feagin Asg8 Defaults";
+            this.Text = "Feagin Asg9 SLR";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

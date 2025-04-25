@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feagin-Asg8-Defaults", "Feagin-Asg8-Defaults.csproj", "{74337EF6-4CB5-408C-84D8-14250E0D41D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feagin-Asg9-SLR", "Feagin-Asg9-SLR.csproj", "{74337EF6-4CB5-408C-84D8-14250E0D41D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

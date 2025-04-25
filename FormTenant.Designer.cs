@@ -1,4 +1,4 @@
-﻿namespace Feagin_Asg8_Defaults
+﻿namespace Feagin_Asg9_SLR
 {
     partial class FormTenant
     {
@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxID = new System.Windows.Forms.TextBox();
-            this.textBoxFirstName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxCity = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxLastName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxZip = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxState = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxDateUpdated = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxDateAdded = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
+            this.labelError = new System.Windows.Forms.Label();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.labelError = new System.Windows.Forms.Label();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.textBoxDateUpdated = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxDateAdded = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxZip = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxState = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxCity = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,102 +87,67 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tenant";
             // 
-            // label1
+            // labelError
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID:";
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(39, 463);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(0, 16);
+            this.labelError.TabIndex = 22;
             // 
-            // textBoxID
+            // textBoxPhone
             // 
-            this.textBoxID.Location = new System.Drawing.Point(134, 50);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.ReadOnly = true;
-            this.textBoxID.Size = new System.Drawing.Size(197, 20);
-            this.textBoxID.TabIndex = 1;
+            this.textBoxPhone.Location = new System.Drawing.Point(134, 216);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(197, 20);
+            this.textBoxPhone.TabIndex = 4;
             // 
-            // textBoxFirstName
+            // label9
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(134, 92);
-            this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(197, 20);
-            this.textBoxFirstName.TabIndex = 3;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(39, 219);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Phone:";
             // 
-            // label2
+            // textBoxEmail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "First Name:";
+            this.textBoxEmail.Location = new System.Drawing.Point(134, 174);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(197, 20);
+            this.textBoxEmail.TabIndex = 3;
             // 
-            // textBoxCity
+            // label10
             // 
-            this.textBoxCity.Location = new System.Drawing.Point(134, 256);
-            this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(197, 20);
-            this.textBoxCity.TabIndex = 7;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(39, 177);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Email:";
             // 
-            // label3
+            // buttonCancel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 259);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "City:";
+            this.buttonCancel.Location = new System.Drawing.Point(197, 496);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(134, 37);
+            this.buttonCancel.TabIndex = 17;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // textBoxLastName
+            // buttonSave
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(134, 134);
-            this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(197, 20);
-            this.textBoxLastName.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 137);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Last Name:";
-            // 
-            // textBoxZip
-            // 
-            this.textBoxZip.Location = new System.Drawing.Point(134, 340);
-            this.textBoxZip.Name = "textBoxZip";
-            this.textBoxZip.Size = new System.Drawing.Size(197, 20);
-            this.textBoxZip.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 343);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Zip:";
-            // 
-            // textBoxState
-            // 
-            this.textBoxState.Location = new System.Drawing.Point(134, 298);
-            this.textBoxState.Name = "textBoxState";
-            this.textBoxState.Size = new System.Drawing.Size(197, 20);
-            this.textBoxState.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 301);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "State:";
+            this.buttonSave.Location = new System.Drawing.Point(42, 496);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(134, 37);
+            this.buttonSave.TabIndex = 16;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textBoxDateUpdated
             // 
@@ -218,67 +183,103 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Date Added:";
             // 
-            // buttonSave
+            // textBoxZip
             // 
-            this.buttonSave.Location = new System.Drawing.Point(42, 496);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(134, 37);
-            this.buttonSave.TabIndex = 16;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.textBoxZip.Location = new System.Drawing.Point(134, 340);
+            this.textBoxZip.Name = "textBoxZip";
+            this.textBoxZip.Size = new System.Drawing.Size(197, 20);
+            this.textBoxZip.TabIndex = 7;
             // 
-            // buttonCancel
+            // label5
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(197, 496);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(134, 37);
-            this.buttonCancel.TabIndex = 17;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(39, 343);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Zip:";
             // 
-            // textBoxPhone
+            // textBoxState
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(134, 216);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(197, 20);
-            this.textBoxPhone.TabIndex = 21;
+            this.textBoxState.Location = new System.Drawing.Point(134, 298);
+            this.textBoxState.Name = "textBoxState";
+            this.textBoxState.Size = new System.Drawing.Size(197, 20);
+            this.textBoxState.TabIndex = 6;
             // 
-            // label9
+            // label6
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(39, 219);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Phone:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(39, 301);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "State:";
             // 
-            // textBoxEmail
+            // textBoxCity
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(134, 174);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(197, 20);
-            this.textBoxEmail.TabIndex = 19;
+            this.textBoxCity.Location = new System.Drawing.Point(134, 256);
+            this.textBoxCity.Name = "textBoxCity";
+            this.textBoxCity.Size = new System.Drawing.Size(197, 20);
+            this.textBoxCity.TabIndex = 5;
             // 
-            // label10
+            // label3
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(39, 177);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 13);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Email:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(39, 259);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "City:";
             // 
-            // labelError
+            // textBoxLastName
             // 
-            this.labelError.AutoSize = true;
-            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(39, 463);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(0, 16);
-            this.labelError.TabIndex = 22;
+            this.textBoxLastName.Location = new System.Drawing.Point(134, 134);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(197, 20);
+            this.textBoxLastName.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(39, 137);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Last Name:";
+            // 
+            // textBoxFirstName
+            // 
+            this.textBoxFirstName.Location = new System.Drawing.Point(134, 92);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(197, 20);
+            this.textBoxFirstName.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "First Name:";
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(134, 50);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.ReadOnly = true;
+            this.textBoxID.Size = new System.Drawing.Size(197, 20);
+            this.textBoxID.TabIndex = 0;
+            this.textBoxID.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID:";
             // 
             // FormTenant
             // 

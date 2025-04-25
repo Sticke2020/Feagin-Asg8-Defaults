@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Feagin_Asg8_Defaults
+namespace Feagin_Asg9_SLR
 {
     public partial class FormTenant : Form
     {
@@ -43,7 +43,7 @@ namespace Feagin_Asg8_Defaults
         {
             textBoxFirstName.Text = tenant.FirstName;
             textBoxLastName.Text = tenant.LastName;
-            textBoxID.Text = tenant.ID.ToString();
+            textBoxID.Text = tenant.Id.ToString();
             textBoxCity.Text = tenant.City;
             textBoxState.Text = tenant.State;
             textBoxZip.Text = tenant.Zip;

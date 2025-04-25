@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Feagin_Asg8_Defaults
+namespace Feagin_Asg9_SLR
 {
     public partial class FormMain : Form
     {
@@ -45,7 +45,7 @@ namespace Feagin_Asg8_Defaults
             Tenant tenant = new Tenant();
 
             // Defaults for new Tenant object
-            tenant.ID = 0;
+            tenant.Id = 0;
             tenant.City = Properties.Settings.Default.DefaultCity;
             tenant.Zip = Properties.Settings.Default.DefaultZip;
             tenant.State = Properties.Settings.Default.DefaultState;
@@ -74,6 +74,16 @@ namespace Feagin_Asg8_Defaults
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            tenantEdit();
+        }
+
+        private void listBoxTenant_DoubleClick(object sender, EventArgs e)
+        {
+            tenantEdit();
+        }
+
+        private void tenantEdit()
+        {
             // Get tenant from listBox
             if (listBoxTenant.SelectedIndex != -1)
             {
@@ -95,7 +105,6 @@ namespace Feagin_Asg8_Defaults
             {
                 MessageBox.Show("Please select a tenant to edit.");
             }
-
         }
     }
 }
