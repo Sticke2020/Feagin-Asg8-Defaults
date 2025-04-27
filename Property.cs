@@ -25,7 +25,7 @@ namespace Feagin_Asg9_SLR
         public override string ToString()
         {
             // The $ is for interpolation
-            return $"ID: {Id} - {Address} {City} {State} ";
+            return $"ID: {Id} - {Address} {City} {State} ({getStatusTypeDescription()}) ";
 
             // Can also be written
             // return " ID: " + ID.ToString() + " " + FirstName etc

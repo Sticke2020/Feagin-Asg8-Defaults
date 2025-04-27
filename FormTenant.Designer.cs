@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxActive = new System.Windows.Forms.CheckBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxAddedByID = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,6 +62,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxActive);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.textBoxAddedByID);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.labelError);
             this.groupBox1.Controls.Add(this.textBoxPhone);
             this.groupBox1.Controls.Add(this.label9);
@@ -82,17 +92,63 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(17, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(388, 558);
+            this.groupBox1.Size = new System.Drawing.Size(388, 630);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tenant";
+            // 
+            // checkBoxActive
+            // 
+            this.checkBoxActive.AutoSize = true;
+            this.checkBoxActive.Location = new System.Drawing.Point(134, 384);
+            this.checkBoxActive.Name = "checkBoxActive";
+            this.checkBoxActive.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxActive.TabIndex = 8;
+            this.checkBoxActive.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(36, 384);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 13);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Active:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(39, 419);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 16);
+            this.label11.TabIndex = 25;
+            // 
+            // textBoxAddedByID
+            // 
+            this.textBoxAddedByID.Location = new System.Drawing.Point(134, 419);
+            this.textBoxAddedByID.Name = "textBoxAddedByID";
+            this.textBoxAddedByID.ReadOnly = true;
+            this.textBoxAddedByID.Size = new System.Drawing.Size(197, 20);
+            this.textBoxAddedByID.TabIndex = 24;
+            this.textBoxAddedByID.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(39, 422);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(70, 13);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Added By ID:";
             // 
             // labelError
             // 
             this.labelError.AutoSize = true;
             this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(39, 463);
+            this.labelError.Location = new System.Drawing.Point(39, 537);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(0, 16);
             this.labelError.TabIndex = 22;
@@ -131,7 +187,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(197, 496);
+            this.buttonCancel.Location = new System.Drawing.Point(197, 564);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(134, 37);
             this.buttonCancel.TabIndex = 17;
@@ -141,7 +197,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(42, 496);
+            this.buttonSave.Location = new System.Drawing.Point(42, 564);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(134, 37);
             this.buttonSave.TabIndex = 16;
@@ -151,16 +207,17 @@
             // 
             // textBoxDateUpdated
             // 
-            this.textBoxDateUpdated.Location = new System.Drawing.Point(134, 424);
+            this.textBoxDateUpdated.Location = new System.Drawing.Point(134, 505);
             this.textBoxDateUpdated.Name = "textBoxDateUpdated";
             this.textBoxDateUpdated.ReadOnly = true;
             this.textBoxDateUpdated.Size = new System.Drawing.Size(197, 20);
             this.textBoxDateUpdated.TabIndex = 15;
+            this.textBoxDateUpdated.TabStop = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 427);
+            this.label7.Location = new System.Drawing.Point(39, 508);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 14;
@@ -168,16 +225,17 @@
             // 
             // textBoxDateAdded
             // 
-            this.textBoxDateAdded.Location = new System.Drawing.Point(134, 382);
+            this.textBoxDateAdded.Location = new System.Drawing.Point(134, 463);
             this.textBoxDateAdded.Name = "textBoxDateAdded";
             this.textBoxDateAdded.ReadOnly = true;
             this.textBoxDateAdded.Size = new System.Drawing.Size(197, 20);
             this.textBoxDateAdded.TabIndex = 13;
+            this.textBoxDateAdded.TabStop = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(39, 385);
+            this.label8.Location = new System.Drawing.Point(39, 466);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 12;
@@ -285,9 +343,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 588);
+            this.ClientSize = new System.Drawing.Size(426, 665);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormTenant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormTenant";
             this.Load += new System.EventHandler(this.FormTenant_Load);
             this.groupBox1.ResumeLayout(false);
@@ -322,5 +381,10 @@
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.CheckBox checkBoxActive;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxAddedByID;
+        private System.Windows.Forms.Label label12;
     }
 }

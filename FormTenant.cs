@@ -50,6 +50,16 @@ namespace Feagin_Asg9_SLR
             textBoxEmail.Text = tenant.Email;
             textBoxPhone.Text = tenant.Phone;
             textBoxDateAdded.Text = tenant.DateAdded.ToString();
+            
+            
+            if (tenant.StatusTypeID == 1)
+            {
+                checkBoxActive.Checked = true;
+            }
+            if (tenant.StatusTypeID == 2)
+            {
+                checkBoxActive.Checked = false;
+            }
 
             if (tenant.DateUpdated != DateTime.MinValue)
             {
@@ -82,8 +92,17 @@ namespace Feagin_Asg9_SLR
             {
                 labelError.Text = "You must enter a City, State, and Zip.";
             }
+            if (!tenant.Email.Contains("@") || !tenant.Email.Contains("."))
+            {
+                labelError.Text = "You must enter a valid Email Address.";
+            }
+            if (tenant.Phone.Any(char.IsLetter))
+            {
+                labelError.Text = "Phone number must not contain letters";
+            }
+
             if (tenant.FirstName != "" && tenant.LastName != "" && tenant.City != ""
-                && tenant.State != "" && tenant.Zip != "")
+                && tenant.State != "" && tenant.Zip != "" && tenant.Email.Contains(".") && tenant.Email.Contains("@") && !tenant.Phone.Any(char.IsLetter))
             {
                 this.DialogResult = DialogResult.OK;
 

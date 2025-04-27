@@ -17,12 +17,13 @@ namespace Feagin_Asg9_SLR
         public DateTime DateLeaseEnds { get; set; }
         public decimal MonthlyRate { get; set; }
         public String Notes { get; set; }
+        
 
 
         public override string ToString()
         {
             // The $ is for interpolation
-            return $"ID: {Id} - {PropertyID} {TenantID} {DateLeaseStarts} {DateLeaseEnds} ";
+            return $"ID: {Id} - {PropertyID} {TenantID} {DateLeaseStarts} {DateLeaseEnds} ({getStatusTypeDescription()}) ";
 
             // Can also be written
             // return " ID: " + ID.ToString() + " " + FirstName etc

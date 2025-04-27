@@ -23,38 +23,57 @@ namespace Feagin_Asg9_SLR  // Don't forget to change the namespace
                  LastName = "Bangsberg", City = "Cumberland",  Zip = "54829",
                  DateAdded = DateTime.Now,
                  Address = "1313 Mockingbird Lane",
-                 State = "WI"
+                 State = "WI", StatusTypeID = 1
             },
 
             new Tenant 
             {
                 Id =++tenantObjectCount, FirstName = "Rene", 
                 LastName = "Bylander", City = "Menomonie", Zip ="54751",
-                DateAdded = DateTime.Now
+                DateAdded = DateTime.Now, StatusTypeID = 1
             },
         };
 
 
-        // listTenant is a list of Tenant objects, We will Default with 2 records.
+        // listProperty is a list of Property objects, We will Default with 2 records.
         private static List<Property> listProperty = new List<Property>()
         {
             new Property
             {
                  Id =++propertyObjectCount, Address = "123 Main Street",
                  City = "Cumberland", State = "WI",  Zip = "54829",
-                 DateAdded = DateTime.Now
+                 DateAdded = DateTime.Now, AvailableOn = DateTime.Now, StatusTypeID = 1
             },
 
             new Property
             {
                  Id =++propertyObjectCount, Address = "1313 Mocking Bird Lane",
                  City = "HollyWood", State = "CA",  Zip = "90024",
-                 DateAdded = DateTime.Now
+                 DateAdded = DateTime.Now, AvailableOn = DateTime.Now, StatusTypeID = 1
             },
         };
 
 
         // TODO:   Create the list for Leases, and give it two records
+        // listProperty is a list of Property objects, We will Default with 2 records.
+        private static List<Lease> listLease = new List<Lease>()
+        {
+            new Lease
+            {
+                 Id =++leaseObjectCount, PropertyID = 1,
+                 TenantID = 2, Description = "6 Month Lease No security deposite.",  MonthlyRate = 1500, Notes = "Pets are allowed ",
+                 DateLeaseStarts = new DateTime(2025, 5, 15, 12, 0, 0),
+                 DateLeaseEnds = new DateTime(2025, 11, 15, 12, 0, 0), StatusTypeID = 1
+            },
+
+            new Lease
+            {
+                 Id =++leaseObjectCount, PropertyID = 2,
+                 TenantID = 1, Description = "1 Year Lease No security deposite",  MonthlyRate = 1600, Notes = "Pets are allowed ",
+                 DateLeaseStarts = new DateTime(2025, 5, 01, 12, 0, 0),
+                 DateLeaseEnds = new DateTime(2026, 5, 01, 12, 0, 0), StatusTypeID = 1
+            },
+        };
 
         //  *******  Tenant Methods ******************************//
 
@@ -99,23 +118,23 @@ namespace Feagin_Asg9_SLR  // Don't forget to change the namespace
             return listProperty;
         }
 
-        // Method to Insert a Tenant Record
+        // Method to Insert a Property Record
         public static void addProperty(Property property)
         {
-            property.Id = ++tenantObjectCount;
+            property.Id = ++propertyObjectCount;
             listProperty.Add(property);
         }
 
-        // Method to update a Tenant Record
-        public static void updateTenant(Property property)
+        // Method to update a Property Record
+        public static void updateProperty(Property property)
         {
             // Find the existing tenant, then replace it. LINQ notation
-            int existingIndex = listTenant.FindIndex(t => t.Id == property.Id);
+            int existingIndex = listProperty.FindIndex(t => t.Id == property.Id);
 
             if (existingIndex != -1)
             {
                 property.DateUpdated = DateTime.Now;
-                listProperty[existingIndex] = property;  // Replace the tenant object
+                listProperty[existingIndex] = property;  // Replace the property object
             }
 
         }
@@ -129,14 +148,41 @@ namespace Feagin_Asg9_SLR  // Don't forget to change the namespace
             return property;
         }
 
-
-
-
-
-
         //  *******  Lease Methods ******************************//
         // TODO:  Add the three Lease Methods.
+        // Method to GET all the Lease Records
+        public static List<Lease> getLease()
+        {
+            return listLease;
+        }
 
+        // Method to Insert a Lease Record
+        public static void addLease(Lease lease)
+        {
+            lease.Id = ++leaseObjectCount;
+            listLease.Add(lease);
+        }
 
+        // Method to update a Tenant Record
+        public static void updateLease(Lease lease)
+        {
+            // Find the existing Lease, then replace it. LINQ notation
+            int existingIndex = listLease.FindIndex(l => l.Id == lease.Id);
+
+            if (existingIndex != -1)
+            {
+                lease.DateUpdated = DateTime.Now;
+                listLease[existingIndex] = lease;  // Replace the leasse object
+            }
+
+        }
+        public static Lease getLeaseByID(int id)
+        {
+            Lease lease;
+
+            lease = listLease.FirstOrDefault(l => l.Id == id);
+
+            return lease;
+        }
     }
 }

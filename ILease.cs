@@ -9,4 +9,5 @@
         DateTime DateLeaseEnds { get; set; }
         decimal MonthlyRate { get; set; }
         String Notes { get; set; }
+        
     }
