@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Feagin_Asg9_SLR
+namespace Feagin_Asg10_SQL
 {
     public partial class FormTenant : Form
     {

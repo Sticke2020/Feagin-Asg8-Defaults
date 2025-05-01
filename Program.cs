@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Feagin_Asg9_SLR
+namespace Feagin_Asg10_SQL
 {
     internal static class Program
     {

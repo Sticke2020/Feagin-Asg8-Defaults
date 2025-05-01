@@ -1,4 +1,4 @@
-﻿namespace Feagin_Asg9_SLR
+﻿namespace Feagin_Asg10_SQL
 {
     partial class FormDefaults
     {

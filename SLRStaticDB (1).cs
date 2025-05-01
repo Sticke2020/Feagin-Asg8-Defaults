@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Feagin_Asg9_SLR  // Don't forget to change the namespace
+namespace Feagin_Asg10_SQL  // Don't forget to change the namespace
 {
     internal static class SLRStaticDB
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Feagin_Asg9_SLR
+namespace Feagin_Asg10_SQL
 {
     public partial class FormMain : Form
     {
@@ -56,14 +56,6 @@ namespace Feagin_Asg9_SLR
                 listBoxLease.Items.Add(lease);
             }
         }
-
-        private void buttonDefaults_Click(object sender, EventArgs e)
-        {
-            FormDefaults formDefaults = new FormDefaults();
-            formDefaults.ShowDialog();
-        }
-
-       
 
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -254,6 +246,16 @@ namespace Feagin_Asg9_SLR
         private void listBoxLease_DoubleClick(object sender, EventArgs e)
         {
             leaseEdit();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.AxHost;
 
-namespace Feagin_Asg9_SLR
+namespace Feagin_Asg10_SQL
 {
     public class Lease : SlumLordRentalBase, ILease
     {

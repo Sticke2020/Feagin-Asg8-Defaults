@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Feagin_Asg9_SLR
+namespace Feagin_Asg10_SQL
 {
     public class Tenant : SlumLordRentalBase, ITenant
     {

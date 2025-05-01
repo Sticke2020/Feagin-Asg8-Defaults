@@ -1,4 +1,4 @@
-﻿namespace Feagin_Asg9_SLR
+﻿namespace Feagin_Asg10_SQL
 {
     partial class FormLease
     {
@@ -500,6 +500,7 @@
             // checkBoxLLaundry
             // 
             this.checkBoxLLaundry.AutoSize = true;
+            this.checkBoxLLaundry.Enabled = false;
             this.checkBoxLLaundry.Location = new System.Drawing.Point(103, 308);
             this.checkBoxLLaundry.Name = "checkBoxLLaundry";
             this.checkBoxLLaundry.Size = new System.Drawing.Size(15, 14);
@@ -510,6 +511,7 @@
             // checkBoxLParking
             // 
             this.checkBoxLParking.AutoSize = true;
+            this.checkBoxLParking.Enabled = false;
             this.checkBoxLParking.Location = new System.Drawing.Point(103, 276);
             this.checkBoxLParking.Name = "checkBoxLParking";
             this.checkBoxLParking.Size = new System.Drawing.Size(15, 14);
@@ -537,6 +539,7 @@
             // 
             // numericUpDownLBathrooms
             // 
+            this.numericUpDownLBathrooms.Enabled = false;
             this.numericUpDownLBathrooms.Location = new System.Drawing.Point(88, 233);
             this.numericUpDownLBathrooms.Name = "numericUpDownLBathrooms";
             this.numericUpDownLBathrooms.ReadOnly = true;
@@ -555,6 +558,7 @@
             // 
             // numericUpDownLBedrooms
             // 
+            this.numericUpDownLBedrooms.Enabled = false;
             this.numericUpDownLBedrooms.Location = new System.Drawing.Point(86, 196);
             this.numericUpDownLBedrooms.Name = "numericUpDownLBedrooms";
             this.numericUpDownLBedrooms.ReadOnly = true;

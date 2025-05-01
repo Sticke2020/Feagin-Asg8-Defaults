@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{74337EF6-4CB5-408C-84D8-14250E0D41D9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Feagin_Asg9_SLR</RootNamespace>
-    <AssemblyName>Feagin_Asg9_SLR</AssemblyName>
+    <RootNamespace>Feagin_Asg10_SQL</RootNamespace>
+    <AssemblyName>Feagin_Asg10_SQL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

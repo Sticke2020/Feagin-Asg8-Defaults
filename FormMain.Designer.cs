@@ -1,4 +1,4 @@
-﻿namespace Feagin_Asg9_SLR
+﻿namespace Feagin_Asg10_SQL
 {
     partial class FormMain
     {
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonDefaults = new System.Windows.Forms.Button();
             this.buttonAddTenant = new System.Windows.Forms.Button();
             this.buttonEditTenant = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,16 +51,6 @@
             this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonDefaults
-            // 
-            this.buttonDefaults.Location = new System.Drawing.Point(35, 436);
-            this.buttonDefaults.Name = "buttonDefaults";
-            this.buttonDefaults.Size = new System.Drawing.Size(122, 44);
-            this.buttonDefaults.TabIndex = 0;
-            this.buttonDefaults.Text = "Defaults";
-            this.buttonDefaults.UseVisualStyleBackColor = true;
-            this.buttonDefaults.Click += new System.EventHandler(this.buttonDefaults_Click);
             // 
             // buttonAddTenant
             // 
@@ -194,6 +183,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -201,6 +191,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1144, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -216,36 +207,36 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // defaultsToolStripMenuItem
             // 
             this.defaultsToolStripMenuItem.Name = "defaultsToolStripMenuItem";
-            this.defaultsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.defaultsToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.defaultsToolStripMenuItem.Text = "Defaults";
             this.defaultsToolStripMenuItem.Click += new System.EventHandler(this.defaultsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(114, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1144, 507);
+            this.ClientSize = new System.Drawing.Size(1144, 422);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.buttonDefaults);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
@@ -263,8 +254,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonDefaults;
         private System.Windows.Forms.Button buttonAddTenant;
         private System.Windows.Forms.Button buttonEditTenant;
         private System.Windows.Forms.GroupBox groupBox1;

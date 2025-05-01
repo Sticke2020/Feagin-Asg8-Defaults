@@ -11,7 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Windows.Forms.VisualStyles;
 using System.Runtime.Remoting.Lifetime;
 
-namespace Feagin_Asg9_SLR
+namespace Feagin_Asg10_SQL
 {
     public partial class FormProperty : Form
     {
