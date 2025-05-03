@@ -14,6 +14,7 @@ namespace Feagin_Asg10_SQL
     {
         List<Tenant> listTenant = new List<Tenant>();
         List<Property> listProperty = new List<Property>();
+        List<Lease> listLease = new List<Lease>();
 
         public FormMain()
         {
@@ -59,9 +60,12 @@ namespace Feagin_Asg10_SQL
         {
             listBoxLease.Items.Clear();
 
-            List<Lease> listLease = SLRStaticDB.getLease();
+            foreach (Lease lease in LeaseDB.getLeases(1))
+            {
+                listBoxLease.Items.Add(lease);
+            }
 
-            foreach (Lease lease in listLease)
+            foreach (Lease lease in LeaseDB.getLeases(2))
             {
                 listBoxLease.Items.Add(lease);
             }
@@ -228,7 +232,7 @@ namespace Feagin_Asg10_SQL
                 if (formLease.DialogResult == DialogResult.OK)
                 {
                     // Update the static database class
-                    SLRStaticDB.addLease(lease);
+                    LeaseDB.insertLease(lease);
 
                     // reload the listBox
                     loadLeaseListBox();
@@ -247,12 +251,15 @@ namespace Feagin_Asg10_SQL
                 // Casting data from listBox to Lease object
                 Lease lease = (Lease)listBoxLease.SelectedItem;
 
+                // Get most up to date version of Lease object
+                lease = LeaseDB.getLeaseByID(lease.Id);
+
                 FormLease formLease = new FormLease(lease);
                 formLease.ShowDialog();
 
                 if (formLease.DialogResult == DialogResult.OK)
                 {
-                    SLRStaticDB.updateLease(lease);
+                    LeaseDB.updateLease(lease);
                 }
 
                 loadLeaseListBox();

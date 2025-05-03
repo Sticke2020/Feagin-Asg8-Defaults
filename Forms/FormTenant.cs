@@ -51,6 +51,7 @@ namespace Feagin_Asg10_SQL
             textBoxPhone.Text = tenant.Phone;
             textBoxDateAdded.Text = tenant.DateAdded.ToString();
             textBoxAddress.Text = tenant.Address;
+            textBoxAddedByID.Text = tenant.AddedByID.ToString();
             
             
             if (tenant.StatusTypeID == 1)

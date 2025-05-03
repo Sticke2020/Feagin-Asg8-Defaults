@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,20 +40,23 @@ namespace Feagin_Asg10_SQL
             if (lease.PropertyID != 0)
             {
                 textBoxLPropertyID.Text = lease.PropertyID.ToString();
+                textBoxPropertyID.Text = lease.PropertyID.ToString();
                 textBoxLTenantID.Text = lease.TenantID.ToString();
+                textBoxTenantID.Text = lease.TenantID.ToString();
                 textBoxLeaseDescription.Text = lease.Description;
                 textBoxMonthlyRate.Text = lease.MonthlyRate.ToString();
                 textBoxLeaseNotes.Text = lease.Notes;
                 textBoxLeaseID.Text = lease.Id.ToString();
                 textBoxLPropertyID.Text = lease.PropertyID.ToString();
                 textBoxLTenantID.Text = lease.TenantID.ToString();
+                textBoxAddedByID.Text = lease.AddedByID.ToString();
 
 
                 Tenant tenant = new Tenant();
-                tenant = SLRStaticDB.getTenantByID(lease.TenantID);
+                tenant = TenantDB.getTenantByID(lease.TenantID);
 
                 Property property = new Property();
-                property = SLRStaticDB.getPropertyByID(lease.PropertyID);
+                property = PropertyDB.getPropertyByID(lease.PropertyID);
 
                 textBoxLFirstName.Text = tenant.FirstName;
                 textBoxLLastName.Text = tenant.LastName;
@@ -108,7 +112,7 @@ namespace Feagin_Asg10_SQL
                 // Fix this when you get to lease
                 if (lease.DateLeaseEnds > dateTimePickerLeaseEnds.MinDate)
                 {
-                    dateTimePickerLeaseEnds.Value = lease.DateLeaseStarts;
+                    dateTimePickerLeaseEnds.Value = lease.DateLeaseEnds;
                 }
                 else
                 {
@@ -116,7 +120,7 @@ namespace Feagin_Asg10_SQL
                 }
             }
 
-            checkBoxLeaseActive.Checked = lease.StatusTypeID == 1;
+            
         }
 
         private void buttonLeaseCancel_Click(object sender, EventArgs e)
@@ -131,8 +135,17 @@ namespace Feagin_Asg10_SQL
             lease.Description = textBoxLeaseDescription.Text;
             lease.DateLeaseEnds = dateTimePickerLeaseEnds.Value;
             lease.DateLeaseStarts = dateTimePickerLeaseStarts.Value;
-            lease.MonthlyRate = Convert.ToInt32(textBoxMonthlyRate.Text);
+            lease.MonthlyRate = Convert.ToDecimal(textBoxMonthlyRate.Text);
             lease.Notes = textBoxLeaseNotes.Text;
+
+            if (checkBoxLeaseActive.Checked)
+            {
+                lease.StatusTypeID = 1;
+            }
+            else
+            {
+                lease.StatusTypeID = 2;
+            }
 
             if (lease.MonthlyRate == 0)
             {
@@ -151,4 +164,5 @@ namespace Feagin_Asg10_SQL
             }
         }
     }
+
 }

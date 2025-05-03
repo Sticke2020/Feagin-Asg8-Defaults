@@ -40,6 +40,7 @@ namespace Feagin_Asg10_SQL
             textBoxPropertyZip.Text = property.Zip;
             textBoxBriefDescription.Text = property.DescriptionBrief;
             textBoxFullDescription.Text = property.DescriptionFull;
+            textBoxAddedByID.Text = property.AddedByID.ToString();
             numericUpDownBathrooms.Value = property.Bathrooms;
             numericUpDownBedrooms.Value = property.Bedrooms;
             checkBoxLaundry.Checked = property.OnsiteLaundry;
