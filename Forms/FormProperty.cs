@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Windows.Forms.VisualStyles;
 using System.Runtime.Remoting.Lifetime;
+using System.Security.Cryptography;
 
 namespace Feagin_Asg10_SQL
 {
@@ -101,6 +102,15 @@ namespace Feagin_Asg10_SQL
             property.OnsiteParking = checkBoxParking.Checked;
             property.OnsiteLaundry = checkBoxLaundry.Checked;
             property.AvailableOn = dateTimePickerAvailableOn.Value;
+
+            if (checkBoxActive.Checked)
+            {
+                property.StatusTypeID = 1;
+            }
+            else
+            {
+                property.StatusTypeID = 2;
+            }
 
             if (property.Address == "")
             {

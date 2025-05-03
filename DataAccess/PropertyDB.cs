@@ -102,6 +102,8 @@ public static class PropertyDB
 
                 sqlCommand.Parameters.AddWithValue("@Address", property.Address);
                 sqlCommand.Parameters.AddWithValue("@City", property.City);
+                sqlCommand.Parameters.AddWithValue("@State", property.State);
+                sqlCommand.Parameters.AddWithValue("@Zip", property.Zip);
                 sqlCommand.Parameters.AddWithValue("@Price", property.Price);
                 sqlCommand.Parameters.AddWithValue("@DescriptionBrief", property.DescriptionBrief);
                 sqlCommand.Parameters.AddWithValue("@DescriptionFull", property.DescriptionFull);
@@ -124,6 +126,41 @@ public static class PropertyDB
         catch (Exception ex)
         {
             throw new ApplicationException("Error inserting property.", ex);
+        }
+    }
+
+    public static void updateProperty(Property property)
+    {
+        try
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(DatabaseSettings.ConnectionString))
+            using (SqlCommand sqlCommand = new SqlCommand("spPropertyUpdate", sqlConnection))
+            {
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+
+                sqlCommand.Parameters.AddWithValue("@ID", property.Id);
+                sqlCommand.Parameters.AddWithValue("@Price", property.Price);
+                sqlCommand.Parameters.AddWithValue("@DescriptionBrief", property.DescriptionBrief);
+                sqlCommand.Parameters.AddWithValue("@DescriptionFull", property.DescriptionFull);
+                sqlCommand.Parameters.AddWithValue("@Bathrooms", property.Bathrooms);
+                sqlCommand.Parameters.AddWithValue("@Bedrooms", property.Bedrooms);
+                sqlCommand.Parameters.AddWithValue("@OnsiteParking", property.OnsiteParking);
+                sqlCommand.Parameters.AddWithValue("@OnsiteLaundry", property.OnsiteLaundry);
+                sqlCommand.Parameters.AddWithValue("@Address", property.Address);
+                sqlCommand.Parameters.AddWithValue("@City", property.City);
+                sqlCommand.Parameters.AddWithValue("@State", property.State);
+                sqlCommand.Parameters.AddWithValue("@Zip", property.Zip);
+                sqlCommand.Parameters.AddWithValue("@DateAvailable", property.AvailableOn);
+                sqlCommand.Parameters.AddWithValue("StatusTypeID", property.StatusTypeID);
+                sqlCommand.Parameters.AddWithValue("@APIKey", DatabaseSettings.ApiKey);
+
+                sqlConnection.Open();
+                sqlCommand.ExecuteNonQuery();
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new ApplicationException("Error updating property.", ex);
         }
     }
 }

@@ -13,6 +13,8 @@ namespace Feagin_Asg10_SQL
     public partial class FormMain : Form
     {
         List<Tenant> listTenant = new List<Tenant>();
+        List<Property> listProperty = new List<Property>();
+
         public FormMain()
         {
             InitializeComponent();
@@ -42,9 +44,12 @@ namespace Feagin_Asg10_SQL
         {
             listBoxProperty.Items.Clear();
 
-            List<Property> listProperty = SLRStaticDB.getProperties();
+            foreach (Property property in PropertyDB.getProperties(1))
+            {
+                listBoxProperty.Items.Add(property);
+            }
 
-            foreach (Property property in listProperty)
+            foreach (Property property in PropertyDB.getProperties(2))
             {
                 listBoxProperty.Items.Add(property);
             }
@@ -153,8 +158,8 @@ namespace Feagin_Asg10_SQL
 
             if (formProperty.DialogResult == DialogResult.OK)
             {
-                // Update the static database class
-                SLRStaticDB.addProperty(property);
+                // Update the database
+                PropertyDB.insertProperty(property);
 
                 // reload the listBox
                 loadPropertyListBox();
@@ -183,12 +188,15 @@ namespace Feagin_Asg10_SQL
                 // Casting data from listBox to Property object
                 Property property = (Property)listBoxProperty.SelectedItem;
 
+                // Get most up to date version of Property object
+                property = PropertyDB.getPropertyByID(property.Id);
+
                 FormProperty formProperty = new FormProperty(property);
                 formProperty.ShowDialog();
 
                 if (formProperty.DialogResult == DialogResult.OK)
                 {
-                    SLRStaticDB.updateProperty(property);
+                    PropertyDB.updateProperty(property);
                 }
 
                 loadPropertyListBox();
