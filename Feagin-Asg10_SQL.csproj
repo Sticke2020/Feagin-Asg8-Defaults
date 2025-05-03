@@ -46,59 +46,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDefaults.cs">
+    <Compile Include="DataAccess\DatabaseSettings.cs" />
+    <Compile Include="DataAccess\LeaseDB.cs" />
+    <Compile Include="DataAccess\PropertyDB.cs" />
+    <Compile Include="DataAccess\TenantDB.cs" />
+    <Compile Include="Forms\FormDefaults.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDefaults.Designer.cs">
+    <Compile Include="Forms\FormDefaults.Designer.cs">
       <DependentUpon>FormDefaults.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLease.cs">
+    <Compile Include="Forms\FormLease.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLease.Designer.cs">
+    <Compile Include="Forms\FormLease.Designer.cs">
       <DependentUpon>FormLease.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs">
+    <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
+    <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProperty.cs">
+    <Compile Include="Forms\FormProperty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProperty.Designer.cs">
+    <Compile Include="Forms\FormProperty.Designer.cs">
       <DependentUpon>FormProperty.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTenant.cs">
+    <Compile Include="Forms\FormTenant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTenant.Designer.cs">
+    <Compile Include="Forms\FormTenant.Designer.cs">
       <DependentUpon>FormTenant.cs</DependentUpon>
     </Compile>
-    <Compile Include="ILease.cs" />
-    <Compile Include="IProperty.cs" />
-    <Compile Include="ITenant %281%29.cs" />
-    <Compile Include="Lease.cs" />
+    <Compile Include="Interfaces\ILease.cs" />
+    <Compile Include="Interfaces\IProperty.cs" />
+    <Compile Include="Interfaces\ITenant %281%29.cs" />
+    <Compile Include="Models\Lease.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Property.cs" />
-    <Compile Include="SLRStaticDB %281%29.cs" />
-    <Compile Include="SlumLordRentalBase.cs" />
-    <Compile Include="Tenant.cs" />
-    <EmbeddedResource Include="FormDefaults.resx">
+    <Compile Include="Models\Property.cs" />
+    <Compile Include="DataAccess\SLRStaticDB %281%29.cs" />
+    <Compile Include="Models\SlumLordRentalBase.cs" />
+    <Compile Include="Models\Tenant.cs" />
+    <EmbeddedResource Include="Forms\FormDefaults.resx">
       <DependentUpon>FormDefaults.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLease.resx">
+    <EmbeddedResource Include="Forms\FormLease.resx">
       <DependentUpon>FormLease.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProperty.resx">
+    <EmbeddedResource Include="Forms\FormProperty.resx">
       <DependentUpon>FormProperty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTenant.resx">
+    <EmbeddedResource Include="Forms\FormTenant.resx">
       <DependentUpon>FormTenant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,5 +128,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

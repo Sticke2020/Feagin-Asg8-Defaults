@@ -44,7 +44,7 @@ namespace Feagin_Asg10_SQL
             // Saves the changes made to defaults
             Properties.Settings.Default.Save();
 
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

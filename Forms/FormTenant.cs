@@ -50,6 +50,7 @@ namespace Feagin_Asg10_SQL
             textBoxEmail.Text = tenant.Email;
             textBoxPhone.Text = tenant.Phone;
             textBoxDateAdded.Text = tenant.DateAdded.ToString();
+            textBoxAddress.Text = tenant.Address;
             
             
             if (tenant.StatusTypeID == 1)
@@ -83,6 +84,17 @@ namespace Feagin_Asg10_SQL
             tenant.Email = textBoxEmail.Text;
             tenant.Phone = textBoxPhone.Text;
             tenant.DateUpdated = DateTime.Now;
+            tenant.Address = textBoxAddress.Text;
+
+            if (checkBoxActive.Checked)
+            {
+                tenant.StatusTypeID = 1;
+            }
+            else
+            {
+                tenant.StatusTypeID = 2;
+            }
+            
 
             if (tenant.FirstName == "" || tenant.LastName == "" )
             {

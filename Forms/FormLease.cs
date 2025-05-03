@@ -105,7 +105,7 @@ namespace Feagin_Asg10_SQL
                 {
                     dateTimePickerLeaseStarts.Value = DateTime.Now;
                 }
-
+                // Fix this when you get to lease
                 if (lease.DateLeaseEnds > dateTimePickerLeaseEnds.MinDate)
                 {
                     dateTimePickerLeaseEnds.Value = lease.DateLeaseStarts;
@@ -116,10 +116,7 @@ namespace Feagin_Asg10_SQL
                 }
             }
 
-            if (lease.PropertyID == 0)
-            {
-                
-            }
+            checkBoxLeaseActive.Checked = lease.StatusTypeID == 1;
         }
 
         private void buttonLeaseCancel_Click(object sender, EventArgs e)

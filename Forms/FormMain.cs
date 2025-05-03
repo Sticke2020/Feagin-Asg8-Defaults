@@ -12,6 +12,7 @@ namespace Feagin_Asg10_SQL
 {
     public partial class FormMain : Form
     {
+        List<Tenant> listTenant = new List<Tenant>();
         public FormMain()
         {
             InitializeComponent();
@@ -19,15 +20,19 @@ namespace Feagin_Asg10_SQL
 
         private void loadTenantListBox()
         {
-            // Load the Tenant ListBox
+
+
             // Clear the listBox
             listBoxTenant.Items.Clear();
 
-            // Make a list and populate it from SLRStaticDB
-            List<Tenant> listTenant = SLRStaticDB.getTenants();
+            // Add active records to listbox
+            foreach (Tenant tenant in TenantDB.getTenants(1))
+            {
+                listBoxTenant.Items.Add(tenant);
+            }
 
-            // Display the list in the listBox
-            foreach (Tenant tenant in listTenant)
+            // Add inactive records to listbox
+            foreach (Tenant tenant in TenantDB.getTenants(2))
             {
                 listBoxTenant.Items.Add(tenant);
             }
@@ -59,6 +64,12 @@ namespace Feagin_Asg10_SQL
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            DatabaseSettings.ApiKey = Properties.Settings.Default.DefaultAPIKey;
+            loadAllListBoxes();
+        }
+
+        private void loadAllListBoxes()
+        {
             loadTenantListBox();
             loadPropertyListBox();
             loadLeaseListBox();
@@ -79,12 +90,15 @@ namespace Feagin_Asg10_SQL
                 // Casting data from listBox to Tenant object
                 Tenant tenant = (Tenant)listBoxTenant.SelectedItem;
 
+                // Get most up to date version of tenant object
+                tenant = TenantDB.getTenantByID(tenant.Id);
+
                 FormTenant formTenant = new FormTenant(tenant);
                 formTenant.ShowDialog();
 
                 if (formTenant.DialogResult == DialogResult.OK)
                 {
-                    SLRStaticDB.updateTenant(tenant);
+                    TenantDB.updateTenant(tenant);
                 }
 
                 loadTenantListBox();
@@ -116,8 +130,8 @@ namespace Feagin_Asg10_SQL
             // Do we need to add a record?
             if (formTenant.DialogResult == DialogResult.OK)
             {
-                // Update the static database class
-                SLRStaticDB.addTenant(tenant);
+                // Update the database
+                TenantDB.insertTenant(tenant);
 
                 // reload the listBox
                 loadTenantListBox();
@@ -151,7 +165,16 @@ namespace Feagin_Asg10_SQL
         {
             FormDefaults formDefaults = new FormDefaults();
             formDefaults.ShowDialog();
+
+            //Set the API KEY
+            if (formDefaults.DialogResult == DialogResult.OK)
+            {
+                DatabaseSettings.ApiKey = Properties.Settings.Default.DefaultAPIKey;
+                loadAllListBoxes();
+            }
+
         }
+            
 
         private void propertyEdit()
         {
