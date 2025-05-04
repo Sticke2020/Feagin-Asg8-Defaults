@@ -113,9 +113,17 @@ namespace Feagin_Asg10_SQL
             {
                 labelError.Text = "Phone number must not contain letters";
             }
+            if (tenant.Zip.Any(char.IsLetter))
+            {
+                labelError.Text = "Zip must not contain letters";
+            }
+            if (tenant.State.Any(char.IsNumber))
+            {
+                labelError.Text = "State must not contain numbers";
+            }
 
             if (tenant.FirstName != "" && tenant.LastName != "" && tenant.City != ""
-                && tenant.State != "" && tenant.Zip != "" && tenant.Email.Contains(".") && tenant.Email.Contains("@") && !tenant.Phone.Any(char.IsLetter))
+                && tenant.State != "" && tenant.Zip != "" && tenant.Email.Contains(".") && tenant.Email.Contains("@") && !tenant.Phone.Any(char.IsLetter) && !tenant.Zip.Any(char.IsLetter) && !tenant.State.Any(char.IsNumber))
             {
                 this.DialogResult = DialogResult.OK;
 

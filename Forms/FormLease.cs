@@ -130,12 +130,13 @@ namespace Feagin_Asg10_SQL
 
         private void buttonLeaseSave_Click(object sender, EventArgs e)
         {
+            string rate = textBoxMonthlyRate.Text;
+
             lease.PropertyID = Convert.ToInt32(textBoxLPropertyID.Text);
             lease.TenantID = Convert.ToInt32(textBoxLTenantID.Text);
             lease.Description = textBoxLeaseDescription.Text;
             lease.DateLeaseEnds = dateTimePickerLeaseEnds.Value;
             lease.DateLeaseStarts = dateTimePickerLeaseStarts.Value;
-            lease.MonthlyRate = Convert.ToDecimal(textBoxMonthlyRate.Text);
             lease.Notes = textBoxLeaseNotes.Text;
 
             if (checkBoxLeaseActive.Checked)
@@ -147,20 +148,27 @@ namespace Feagin_Asg10_SQL
                 lease.StatusTypeID = 2;
             }
 
-            if (lease.MonthlyRate == 0)
+            if (rate == "0")
             {
-                labelError.Text = "You must enter a Monthly Rate.";
+                labelError.Text = "You must enter a Monthly Rate greater than 0.";
             }
             if (dateTimePickerLeaseStarts.Value >= dateTimePickerLeaseEnds.Value)
             {
                 labelError.Text = "Lease start date must come befor lease end date.";
             }
-           
-            if (lease.MonthlyRate != 0 && dateTimePickerLeaseStarts.Value < dateTimePickerLeaseEnds.Value)
+            if (rate.Any(char.IsLetter))
             {
-                this.DialogResult = DialogResult.OK;
+                labelError.Text = "You must enter numbers only";
+            }
+            if (rate == "")
+            {
+                labelError.Text = "You must enter a Monthly rate";
+            }
 
-                this.Close();
+            if (rate != "0" && rate != "" && !rate.Any(char.IsLetter) && dateTimePickerLeaseStarts.Value < dateTimePickerLeaseEnds.Value)
+            {
+                lease.MonthlyRate = Convert.ToDecimal(rate);
+                this.DialogResult = DialogResult.OK;
             }
         }
     }

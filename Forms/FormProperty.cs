@@ -91,11 +91,12 @@ namespace Feagin_Asg10_SQL
 
         private void buttonPropertySave_Click(object sender, EventArgs e)
         {
+            string price = textBoxPropertyPrice.Text;
+
             property.Address = textBoxPropertyAddress.Text;
             property.City = textBoxPropertyCity.Text;
             property.State = textBoxPropertyState.Text;
             property.Zip = textBoxPropertyZip.Text;
-            property.Price = Convert.ToDecimal(textBoxPropertyPrice.Text);
             property.DescriptionBrief = textBoxBriefDescription.Text;
             property.DescriptionFull = textBoxFullDescription.Text;
             property.Bedrooms = Convert.ToInt32(numericUpDownBedrooms.Text);
@@ -121,7 +122,7 @@ namespace Feagin_Asg10_SQL
             {
                 labelError.Text = "You must enter a City, State, and Zip.";
             }
-            if (property.Price == 0)
+            if (price == "0")
             {
                 labelError.Text = "You must enter a Price.";
             }
@@ -129,13 +130,23 @@ namespace Feagin_Asg10_SQL
             {
                 labelError.Text = "You must enter number of bedrooms and bathrooms.";
             }
-            if (property.Address != "" && property.City != "" && property.State != ""
-                && property.Zip != "" && property.Price != 0 && property.Bedrooms != 0
-                && property.Bathrooms != 0)
+            if (price.Any(char.IsLetter))
             {
+                labelError.Text = "You must enter numbers only";
+            }
+            else if (price == "")
+            {
+                labelError.Text = "You must enter a price";
+            }
+            
+
+            if (property.Address != "" && property.City != "" && property.State != ""
+                && property.Zip != "" && price != "0" && property.Bedrooms != 0
+                && property.Bathrooms != 0 && price != "" && !price.Any(char.IsLetter))
+            {
+                property.Price = Convert.ToDecimal(price);
                 this.DialogResult = DialogResult.OK;
 
-                this.Close();
             }
 
         }
