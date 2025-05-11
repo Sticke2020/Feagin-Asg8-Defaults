@@ -10,39 +10,38 @@ public static class TenantDB
     public static List<Tenant> getTenants(byte statusTypeID)
     {
         List<Tenant> listTenants = new List<Tenant>();
+        String sqlSelect = "SELECT * FROM dbo.fnTenantListAsTable(@StatusTypeID, @APIKey) order by DateUpdated desc";
 
-        try
+        using (SqlConnection sqlConnection = new SqlConnection(DatabaseSettings.ConnectionString))
+        using (SqlCommand sqlCommand = new SqlCommand(sqlSelect, sqlConnection))
         {
-            using (SqlConnection sqlConnection = new SqlConnection(DatabaseSettings.ConnectionString))
-            using (SqlCommand sqlCommand = new SqlCommand("spTenantList", sqlConnection))
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.Parameters.AddWithValue("@StatusTypeID", statusTypeID);
+            sqlCommand.Parameters.AddWithValue("@APIKey", DatabaseSettings.ApiKey);
+
+            sqlConnection.Open();
+
+            using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
             {
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("@StatusTypeID", statusTypeID);
-                sqlCommand.Parameters.AddWithValue("@APIKey", DatabaseSettings.ApiKey);
-
-                sqlConnection.Open();
-
-                using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+                while (dataReader.Read())
                 {
-                    while (dataReader.Read())
+                    Tenant tenant = new Tenant
                     {
-                        Tenant tenant = new Tenant
-                        {
-                            Id = (int)dataReader["ID"],
-                            FirstName = dataReader["FirstName"].ToString(),
-                            LastName = dataReader["LastName"].ToString(),
-                            StatusTypeID = (byte)dataReader["StatusTypeID"],
-                            DateAdded = (DateTime)dataReader["DateAdded"]
-                        };
-                        listTenants.Add(tenant);
-                    }
+                        Id = (int)dataReader["ID"],
+                        FirstName = dataReader["FirstName"].ToString(),
+                        LastName = dataReader["LastName"].ToString(),
+                        City = dataReader["City"].ToString(),
+                        Zip = dataReader["Zip"].ToString(),
+                        StatusTypeID = (byte)dataReader["StatusTypeID"],
+                        DateAdded = (DateTime)dataReader["DateAdded"],
+                        DateUpdated = (DateTime)dataReader["DateUpdated"]
+                    };
+                    listTenants.Add(tenant);
                 }
             }
         }
-        catch (Exception ex)
-        {
-            throw new ApplicationException("Error retrieving tenants.", ex);
-        }
+        
+       
 
         return listTenants;
     }

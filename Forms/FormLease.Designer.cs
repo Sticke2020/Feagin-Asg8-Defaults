@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLease));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelError = new System.Windows.Forms.Label();
             this.buttonLeaseCancel = new System.Windows.Forms.Button();
             this.buttonLeaseSave = new System.Windows.Forms.Button();
             this.textBoxAddedByID = new System.Windows.Forms.TextBox();
@@ -87,7 +89,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.textBoxLPropertyID = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.labelError = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -130,6 +131,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lease Info:";
+            // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(56, 424);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(36, 16);
+            this.labelError.TabIndex = 21;
+            this.labelError.Text = "Error";
             // 
             // buttonLeaseCancel
             // 
@@ -683,17 +695,6 @@
             this.label22.TabIndex = 14;
             this.label22.Text = "ID:";
             // 
-            // labelError
-            // 
-            this.labelError.AutoSize = true;
-            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(56, 424);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(36, 16);
-            this.labelError.TabIndex = 21;
-            this.labelError.Text = "Error";
-            // 
             // FormLease
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,6 +703,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLease";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormLease";

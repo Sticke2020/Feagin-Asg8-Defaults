@@ -23,7 +23,7 @@ namespace Feagin_Asg10_SQL
         public override string ToString()
         {
             // The $ is for interpolation
-            return $"ID: {Id} - P: {PropertyID} - T: {TenantID} ({getStatusTypeDescription()}) ";
+            return $"ID: {Id} - P: {PropertyID} - T: {TenantID} - DateUpdated: {DateUpdated.ToShortDateString()} --- ({getStatusTypeDescription()}) ";
 
             // Can also be written
             // return " ID: " + ID.ToString() + " " + FirstName etc

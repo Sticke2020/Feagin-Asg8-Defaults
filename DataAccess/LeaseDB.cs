@@ -9,39 +9,34 @@ public static class LeaseDB
     public static List<Lease> getLeases(byte statusTypeID)
     {
         List<Lease> listLeases = new List<Lease>();
+        String sqlSelect = "SELECT * FROM fnLeaseListAsTable(@StatusTypeID, @APIKey) order by DateUpdated desc";
 
-        try
+        using (SqlConnection sqlConnection = new SqlConnection(DatabaseSettings.ConnectionString))
+        using (SqlCommand sqlCommand = new SqlCommand(sqlSelect, sqlConnection))
         {
-            using (SqlConnection sqlConnection = new SqlConnection(DatabaseSettings.ConnectionString))
-            using (SqlCommand sqlCommand = new SqlCommand("spLeaseList", sqlConnection))
-            {
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("@StatusTypeID", statusTypeID);
-                sqlCommand.Parameters.AddWithValue("@APIKey", DatabaseSettings.ApiKey);
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.Parameters.AddWithValue("@StatusTypeID", statusTypeID);
+            sqlCommand.Parameters.AddWithValue("@APIKey", DatabaseSettings.ApiKey);
 
-                sqlConnection.Open();
-                using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+            sqlConnection.Open();
+            using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+            {
+                while (dataReader.Read())
                 {
-                    while (dataReader.Read())
+                    Lease lease = new Lease
                     {
-                        Lease lease = new Lease
-                        {
-                            Id = (int)dataReader["ID"],
-                            PropertyID = (int)dataReader["PropertyID"],
-                            TenantID = (int)dataReader["TenantID"],
-                            Description = dataReader["LeaseDescription"].ToString(),
-                            StatusTypeID = (byte)dataReader["StatusTypeID"]
-                        };
-                        listLeases.Add(lease);
-                    }
+                        Id = (int)dataReader["ID"],
+                        PropertyID = (int)dataReader["PropertyID"],
+                        TenantID = (int)dataReader["TenantID"],
+                        DateUpdated = (DateTime)dataReader["DateUpdated"],
+                        Description = dataReader["LeaseDescription"].ToString(),
+                        StatusTypeID = (byte)dataReader["StatusTypeID"]
+                    };
+                    listLeases.Add(lease);
                 }
             }
         }
-        catch (Exception ex)
-        {
-            throw new ApplicationException("Error retrieving leases.", ex);
-        }
-
+       
         return listLeases;
     }
 

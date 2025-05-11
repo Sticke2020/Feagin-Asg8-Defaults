@@ -3,44 +3,42 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 public static class PropertyDB
 {
     public static List<Property> getProperties(byte statusTypeID)
     {
         List<Property> listProperties = new List<Property>();
+        String sqlSelect = "SELECT * FROM dbo.fnPropertyListAsTable(@StatusTypeID, @APIKey) order by DateUpdated desc";
 
-        try
+        
+        using (SqlConnection sqlConnection = new SqlConnection(DatabaseSettings.ConnectionString))
+        using (SqlCommand sqlCommand = new SqlCommand(sqlSelect, sqlConnection))
         {
-            using (SqlConnection sqlConnection = new SqlConnection(DatabaseSettings.ConnectionString))
-            using (SqlCommand sqlCommand = new SqlCommand("spPropertyList", sqlConnection))
-            {
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("@StatusTypeID", statusTypeID);
-                sqlCommand.Parameters.AddWithValue("@APIKey", DatabaseSettings.ApiKey);
+            sqlCommand.CommandType = CommandType.Text;
+            sqlCommand.Parameters.AddWithValue("@StatusTypeID", statusTypeID);
+            sqlCommand.Parameters.AddWithValue("@APIKey", DatabaseSettings.ApiKey);
 
-                sqlConnection.Open();
-                using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+            sqlConnection.Open();
+            using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+            {
+                while (dataReader.Read())
                 {
-                    while (dataReader.Read())
+                    Property property = new Property
                     {
-                        Property property = new Property
-                        {
-                            Id = (int)dataReader["ID"],
-                            City = dataReader["City"].ToString(),
-                            State = dataReader["State"].ToString(),
-                            StatusTypeID = (byte)dataReader["StatusTypeID"]
-                        };
-                        listProperties.Add(property);
-                    }
+                        Id = (int)dataReader["ID"],
+                        City = dataReader["City"].ToString(),
+                        State = dataReader["State"].ToString(),
+                        Address = dataReader["Address"].ToString(),
+                        DateUpdated = (DateTime)dataReader["DateUpdated"],
+                        StatusTypeID = (byte)dataReader["StatusTypeID"]
+                    };
+                    listProperties.Add(property);
                 }
             }
         }
-        catch (Exception ex)
-        {
-            throw new ApplicationException("Error retrieving properties.", ex);
-        }
-
+       
         return listProperties;
     }
 

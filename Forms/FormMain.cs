@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Feagin_Asg10_SQL.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,15 +30,32 @@ namespace Feagin_Asg10_SQL
             listBoxTenant.Items.Clear();
 
             // Add active records to listbox
-            foreach (Tenant tenant in TenantDB.getTenants(1))
-            {
-                listBoxTenant.Items.Add(tenant);
-            }
 
-            // Add inactive records to listbox
-            foreach (Tenant tenant in TenantDB.getTenants(2))
+            if (radioButtonTenantActive.Checked)
             {
-                listBoxTenant.Items.Add(tenant);
+                foreach (Tenant tenant in TenantDB.getTenants(1))
+                {
+                    listBoxTenant.Items.Add(tenant);
+                }
+            }
+            else if (radioButtonTenantDeleted.Checked)
+            {
+                // Add inactive records to listbox
+                foreach (Tenant tenant in TenantDB.getTenants(2))
+                {
+                    listBoxTenant.Items.Add(tenant);
+                }
+            }
+            else
+            {
+                foreach (Tenant tenant in TenantDB.getTenants(1))
+                {
+                    listBoxTenant.Items.Add(tenant);
+                }
+                foreach (Tenant tenant in TenantDB.getTenants(2))
+                {
+                    listBoxTenant.Items.Add(tenant);
+                }
             }
         }
 
@@ -45,29 +63,63 @@ namespace Feagin_Asg10_SQL
         {
             listBoxProperty.Items.Clear();
 
-            foreach (Property property in PropertyDB.getProperties(1))
+
+            if (radioButtonPropertyActive.Checked)
             {
-                listBoxProperty.Items.Add(property);
+                foreach (Property property in PropertyDB.getProperties(1))
+                {
+                    listBoxProperty.Items.Add(property);
+                }
+            }
+            else if (radioButtonPropertyDeleted.Checked)
+            {
+                foreach (Property property in PropertyDB.getProperties(2))
+                {
+                    listBoxProperty.Items.Add(property);
+                }
+            }
+            else
+            {
+                foreach (Property property in PropertyDB.getProperties(1))
+                {
+                    listBoxProperty.Items.Add(property);
+                }
+                foreach (Property property in PropertyDB.getProperties(2))
+                {
+                    listBoxProperty.Items.Add(property);
+                }
             }
 
-            foreach (Property property in PropertyDB.getProperties(2))
-            {
-                listBoxProperty.Items.Add(property);
-            }
         }
 
         private void loadLeaseListBox()
         {
             listBoxLease.Items.Clear();
 
-            foreach (Lease lease in LeaseDB.getLeases(1))
+            if (radioButtonLeaseActive.Checked)
             {
-                listBoxLease.Items.Add(lease);
+                foreach (Lease lease in LeaseDB.getLeases(1))
+                {
+                    listBoxLease.Items.Add(lease);
+                }
             }
-
-            foreach (Lease lease in LeaseDB.getLeases(2))
+            else if (radioButtonLeaseDeleted.Checked)
             {
-                listBoxLease.Items.Add(lease);
+                foreach (Lease lease in LeaseDB.getLeases(2))
+                {
+                    listBoxLease.Items.Add(lease);
+                }
+            }
+            else
+            {
+                foreach (Lease lease in LeaseDB.getLeases(1))
+                {
+                    listBoxLease.Items.Add(lease);
+                }
+                foreach (Lease lease in LeaseDB.getLeases(2))
+                {
+                    listBoxLease.Items.Add(lease);
+                }
             }
         }
 
@@ -294,6 +346,57 @@ namespace Feagin_Asg10_SQL
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void radioButtonTenantActive_Click(object sender, EventArgs e)
+        {
+            loadTenantListBox();
+        }
+
+        private void radioButtonTenantDeleted_Click(object sender, EventArgs e)
+        {
+            loadTenantListBox();
+        }
+
+        private void radioButtonTenantBoth_Click(object sender, EventArgs e)
+        {
+            loadTenantListBox();
+        }
+
+        private void radioButtonPropertyActive_Click(object sender, EventArgs e)
+        {
+            loadPropertyListBox();
+        }
+
+        private void radioButtonPropertyDeleted_Click(object sender, EventArgs e)
+        {
+            loadPropertyListBox();
+        }
+
+        private void radioButtonPropertyBoth_Click(object sender, EventArgs e)
+        {
+            loadPropertyListBox();
+        }
+
+        private void radioButtonLeaseActive_Click(object sender, EventArgs e)
+        {
+            loadLeaseListBox();
+        }
+
+        private void radioButtonLeaseDeleted_Click(object sender, EventArgs e)
+        {
+            loadLeaseListBox();
+        }
+
+        private void radioButtonLeaseBoth_Click(object sender, EventArgs e)
+        {
+            loadLeaseListBox();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
         }
     }
 }
