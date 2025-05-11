@@ -19,7 +19,8 @@ namespace Feagin_Asg10_SQL.Forms
 
         private void About_Load(object sender, EventArgs e)
         {
-            
+            labelAppName.Text = Application.CompanyName;
+            labelVersion.Text = $"version: {Application.ProductVersion}";
         }
     }
 }

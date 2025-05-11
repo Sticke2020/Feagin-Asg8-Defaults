@@ -99,6 +99,7 @@
             // textBoxPropertyZip
             // 
             this.textBoxPropertyZip.Location = new System.Drawing.Point(61, 158);
+            this.textBoxPropertyZip.MaxLength = 10;
             this.textBoxPropertyZip.Name = "textBoxPropertyZip";
             this.textBoxPropertyZip.Size = new System.Drawing.Size(160, 20);
             this.textBoxPropertyZip.TabIndex = 5;
@@ -106,6 +107,7 @@
             // textBoxPropertyState
             // 
             this.textBoxPropertyState.Location = new System.Drawing.Point(61, 131);
+            this.textBoxPropertyState.MaxLength = 2;
             this.textBoxPropertyState.Name = "textBoxPropertyState";
             this.textBoxPropertyState.Size = new System.Drawing.Size(160, 20);
             this.textBoxPropertyState.TabIndex = 4;
@@ -113,6 +115,7 @@
             // textBoxPropertyCity
             // 
             this.textBoxPropertyCity.Location = new System.Drawing.Point(61, 104);
+            this.textBoxPropertyCity.MaxLength = 25;
             this.textBoxPropertyCity.Name = "textBoxPropertyCity";
             this.textBoxPropertyCity.Size = new System.Drawing.Size(160, 20);
             this.textBoxPropertyCity.TabIndex = 3;
@@ -120,6 +123,7 @@
             // textBoxPropertyAddress
             // 
             this.textBoxPropertyAddress.Location = new System.Drawing.Point(61, 77);
+            this.textBoxPropertyAddress.MaxLength = 50;
             this.textBoxPropertyAddress.Name = "textBoxPropertyAddress";
             this.textBoxPropertyAddress.Size = new System.Drawing.Size(160, 20);
             this.textBoxPropertyAddress.TabIndex = 2;
@@ -333,6 +337,7 @@
             // textBoxFullDescription
             // 
             this.textBoxFullDescription.Location = new System.Drawing.Point(13, 121);
+            this.textBoxFullDescription.MaxLength = 5000;
             this.textBoxFullDescription.Multiline = true;
             this.textBoxFullDescription.Name = "textBoxFullDescription";
             this.textBoxFullDescription.Size = new System.Drawing.Size(579, 76);
@@ -350,6 +355,7 @@
             // textBoxBriefDescription
             // 
             this.textBoxBriefDescription.Location = new System.Drawing.Point(13, 38);
+            this.textBoxBriefDescription.MaxLength = 60;
             this.textBoxBriefDescription.Multiline = true;
             this.textBoxBriefDescription.Name = "textBoxBriefDescription";
             this.textBoxBriefDescription.Size = new System.Drawing.Size(579, 51);

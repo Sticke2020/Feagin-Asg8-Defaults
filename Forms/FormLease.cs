@@ -44,7 +44,7 @@ namespace Feagin_Asg10_SQL
                 textBoxLTenantID.Text = lease.TenantID.ToString();
                 textBoxTenantID.Text = lease.TenantID.ToString();
                 textBoxLeaseDescription.Text = lease.Description;
-                textBoxMonthlyRate.Text = lease.MonthlyRate.ToString();
+                textBoxMonthlyRate.Text = lease.MonthlyRate.ToString("F2");
                 textBoxLeaseNotes.Text = lease.Notes;
                 textBoxLeaseID.Text = lease.Id.ToString();
                 textBoxLPropertyID.Text = lease.PropertyID.ToString();

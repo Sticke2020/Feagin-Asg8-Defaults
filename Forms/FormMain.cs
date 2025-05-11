@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Feagin_Asg10_SQL
 {
@@ -208,6 +209,10 @@ namespace Feagin_Asg10_SQL
         {
             // Create new property object
             Property property = new Property();
+
+            property.City = Properties.Settings.Default.DefaultCity;
+            property.State = Properties.Settings.Default.DefaultState;
+            property.Zip = Properties.Settings.Default.DefaultZip;
 
             FormProperty formProperty = new FormProperty(property);
             formProperty.ShowDialog();

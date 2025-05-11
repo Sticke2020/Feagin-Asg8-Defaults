@@ -33,7 +33,7 @@ namespace Feagin_Asg10_SQL
         private void loadPropertyData()
         {
             textBoxPropertyAddress.Text = property.Address;
-            textBoxPropertyPrice.Text = property.Price.ToString();
+            textBoxPropertyPrice.Text = property.Price.ToString("F2");
             textBoxPropertyCity.Text = property.City;
             textBoxPropertyID.Text = property.Id.ToString();
             textBoxPropertyState.Text = property.State;

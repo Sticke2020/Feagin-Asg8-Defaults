@@ -85,6 +85,7 @@
             // textBoxApiKey
             // 
             this.textBoxApiKey.Location = new System.Drawing.Point(134, 201);
+            this.textBoxApiKey.MaxLength = 100;
             this.textBoxApiKey.Name = "textBoxApiKey";
             this.textBoxApiKey.Size = new System.Drawing.Size(230, 20);
             this.textBoxApiKey.TabIndex = 7;
@@ -101,6 +102,7 @@
             // textBoxZip
             // 
             this.textBoxZip.Location = new System.Drawing.Point(134, 151);
+            this.textBoxZip.MaxLength = 10;
             this.textBoxZip.Name = "textBoxZip";
             this.textBoxZip.Size = new System.Drawing.Size(230, 20);
             this.textBoxZip.TabIndex = 5;
@@ -117,6 +119,7 @@
             // textBoxState
             // 
             this.textBoxState.Location = new System.Drawing.Point(134, 99);
+            this.textBoxState.MaxLength = 2;
             this.textBoxState.Name = "textBoxState";
             this.textBoxState.Size = new System.Drawing.Size(230, 20);
             this.textBoxState.TabIndex = 3;
@@ -133,6 +136,7 @@
             // textBoxCity
             // 
             this.textBoxCity.Location = new System.Drawing.Point(134, 49);
+            this.textBoxCity.MaxLength = 50;
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(230, 20);
             this.textBoxCity.TabIndex = 1;

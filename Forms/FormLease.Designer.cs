@@ -220,6 +220,7 @@
             // textBoxLeaseNotes
             // 
             this.textBoxLeaseNotes.Location = new System.Drawing.Point(9, 222);
+            this.textBoxLeaseNotes.MaxLength = 1000;
             this.textBoxLeaseNotes.Multiline = true;
             this.textBoxLeaseNotes.Name = "textBoxLeaseNotes";
             this.textBoxLeaseNotes.Size = new System.Drawing.Size(421, 100);
@@ -237,6 +238,7 @@
             // textBoxLeaseDescription
             // 
             this.textBoxLeaseDescription.Location = new System.Drawing.Point(9, 156);
+            this.textBoxLeaseDescription.MaxLength = 100;
             this.textBoxLeaseDescription.Multiline = true;
             this.textBoxLeaseDescription.Name = "textBoxLeaseDescription";
             this.textBoxLeaseDescription.Size = new System.Drawing.Size(421, 38);

@@ -105,6 +105,7 @@
             // textBoxAddress
             // 
             this.textBoxAddress.Location = new System.Drawing.Point(134, 253);
+            this.textBoxAddress.MaxLength = 100;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(197, 20);
             this.textBoxAddress.TabIndex = 5;
@@ -177,6 +178,7 @@
             // textBoxPhone
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(134, 216);
+            this.textBoxPhone.MaxLength = 25;
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(197, 20);
             this.textBoxPhone.TabIndex = 4;
@@ -193,6 +195,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(134, 174);
+            this.textBoxEmail.MaxLength = 100;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(197, 20);
             this.textBoxEmail.TabIndex = 3;
@@ -265,6 +268,7 @@
             // textBoxZip
             // 
             this.textBoxZip.Location = new System.Drawing.Point(134, 372);
+            this.textBoxZip.MaxLength = 10;
             this.textBoxZip.Name = "textBoxZip";
             this.textBoxZip.Size = new System.Drawing.Size(197, 20);
             this.textBoxZip.TabIndex = 8;
@@ -281,6 +285,7 @@
             // textBoxState
             // 
             this.textBoxState.Location = new System.Drawing.Point(134, 330);
+            this.textBoxState.MaxLength = 2;
             this.textBoxState.Name = "textBoxState";
             this.textBoxState.Size = new System.Drawing.Size(197, 20);
             this.textBoxState.TabIndex = 7;
@@ -297,6 +302,7 @@
             // textBoxCity
             // 
             this.textBoxCity.Location = new System.Drawing.Point(134, 288);
+            this.textBoxCity.MaxLength = 50;
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(197, 20);
             this.textBoxCity.TabIndex = 6;
@@ -313,6 +319,7 @@
             // textBoxLastName
             // 
             this.textBoxLastName.Location = new System.Drawing.Point(134, 134);
+            this.textBoxLastName.MaxLength = 25;
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(197, 20);
             this.textBoxLastName.TabIndex = 2;
@@ -329,6 +336,7 @@
             // textBoxFirstName
             // 
             this.textBoxFirstName.Location = new System.Drawing.Point(134, 92);
+            this.textBoxFirstName.MaxLength = 25;
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(197, 20);
             this.textBoxFirstName.TabIndex = 1;
